@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Node1.iml" filepath="$PROJECT_DIR$/Node1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/LStack.iml" filepath="$PROJECT_DIR$/LStack.iml" />
     </modules>
   </component>
 </project>
