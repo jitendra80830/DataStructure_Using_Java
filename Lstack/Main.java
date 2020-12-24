@@ -14,8 +14,9 @@ public class Main{
 		stack.pop();
 		//stack.pop();
 		
-		//System.out.print(stack.size()); //for size
+		System.out.println(stack.size()); //for size
 		
+		System.out.println(stack.peek());
 		
 		System.out.println(stack.isEmpty());
 	}
