@@ -1,4 +1,4 @@
-/* String*/
+/* String and its some functions*/
 import java.util.Arrays;
 
 public class Main1{
@@ -26,7 +26,25 @@ public class Main1{
 		
 		//loewrcase and uppercase
 		System.out.println(name.toUpperCase()); //for Uppercase
-		System.out.println(name.toLowerCase()); //for loewrcase
+		System.out.println(name.toLowerCase()); //for loewrcasex
+		
+		//indexOf
+		System.out.println(name.indexOf("l"));
+		
+		//isEmpty
+		System.out.println(name.isEmpty());
+		
+		//lastIndexOf
+		System.out.println(name.lastIndexOf("l"));
+		
+		//replace and replaceAll
+		
+		System.out.println(name.replace("H","K"));//for replace
+		
+		System.out.println(name.replaceAll("World","jitendra")); //for replaceAll
+		
+		
+		
 	}
 }
 		
