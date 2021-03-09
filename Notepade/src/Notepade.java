@@ -1,9 +1,11 @@
 import javax.swing.*;
+import javax.swing.filechooser.FileNameExtensionFilter;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
 import  java.awt.event.*;
 import java.io.*;
+import  javax.swing.JFileChooser.*;
 
 
 public class Notepade extends JFrame implements ActionListener {
@@ -91,6 +93,24 @@ public class Notepade extends JFrame implements ActionListener {
         if(ae.getActionCommand().equals("New")){
             area.setText("");
         }else if(ae.getActionCommand().equals("Open")){
+            JFileChooser chooser = new JFileChooser();
+            chooser.setAcceptAllFileFilterUsed(false);
+            FileNameExtensionFilter restric = new FileNameExtensionFilter("only .txt files","txt");
+            chooser.addChoosableFileFilter(restric);
+
+            int action = chooser.showOpenDialog(this);
+            if(action!=JFileChooser.APPROVE_OPTION){
+                return;
+            }
+            File file = chooser.getSelectedFile();
+            try{
+                BufferedReader reader = new BufferedReader(new FileReader(file));
+                area.read(reader,null);
+
+
+            }catch (Exception e){}
+
+
 
         }else if(ae.getActionCommand().equals("Save")){
             JFileChooser saveas = new JFileChooser();
