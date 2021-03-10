@@ -1,3 +1,5 @@
+package com.company;
+
 import javax.swing.*;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import java.awt.*;
@@ -11,6 +13,7 @@ import  javax.swing.JFileChooser.*;
 public class Notepade extends JFrame implements ActionListener {
     JTextArea area;
     JScrollPane pane;
+    String text;
     Notepade(){
         setBounds(0,0,1950,1050);
 
@@ -58,7 +61,7 @@ public class Notepade extends JFrame implements ActionListener {
         cute.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_X, ActionEvent.CTRL_MASK));
         cute.addActionListener(this);
 
-        JMenuItem selectall = new JMenuItem("Select Allt");
+        JMenuItem selectall = new JMenuItem("Select All");
         selectall.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_A, ActionEvent.CTRL_MASK));
         selectall.addActionListener(this);
 
@@ -127,10 +130,35 @@ public class Notepade extends JFrame implements ActionListener {
                 area.write(outfile);
 
             }catch(Exception e){}
+
+        }else if(ae.getActionCommand().equals("Print")){
+            try{
+                area.print();
+
+
+            }catch (Exception e){}
+
+        }else if(ae.getActionCommand().equals("Exit")){
+            System.exit(0);
+        }else if(ae.getActionCommand().equals("Copy")){
+            text = area.getSelectedText();
+
+        }else if(ae.getActionCommand().equals("Paste")){
+            area.insert(text,area.getCaretPosition());
+        }else if(ae.getActionCommand().equals("Cute")){
+            text =  area.getSelectedText();
+            area.replaceRange("",area.getSelectionStart(),area.getSelectionEnd());
+        }else if(ae.getActionCommand().equals("Select All")){
+            area.selectAll();
+        }else if(ae.getActionCommand().equals("About the Notepade")){
+            new About().setVisible(true);
         }
+
+
 
     }
     public static void main(String[] args){
+
         new Notepade().setVisible(true);
     }
 
