@@ -22,6 +22,7 @@ public class Login extends JFrame implements  ActionListener {
         int z = getWidth()-x;
         int w = z/y;
         String pad = "";
+        pad = String.format("%"+w+"s",pad);
         setTitle(pad+"AUTOMATED TELLER MACHINE");
 
 
