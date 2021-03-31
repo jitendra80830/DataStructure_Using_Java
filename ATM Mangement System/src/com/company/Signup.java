@@ -8,7 +8,7 @@ import  java.sql.*;
 import java.util.*;
 
 
-public class Signup extends JFrame{
+public class Signup extends JFrame implements ActionListener {
     JLabel l1,l2,l3,l4,l5,l6,l7,l8,l9,l10,l11,l12,l13,l14,l15;
     JTextField t1,t2,t3,t4,t5,t6,t7;
     JRadioButton r1,r2,r3,r4,r5;
@@ -123,6 +123,96 @@ public class Signup extends JFrame{
         r5 = new JRadioButton("Other");
         r5.setFont(new Font("Raleway",Font.BOLD,14));
         r5.setBackground(Color.WHITE);
+
+
+        String date[] = {"1","2","3","4","5","6","7","8","9"};
+        c1 = new JComboBox(date);
+        c1.setBackground(Color.WHITE);
+
+        String month[] = {"January","February","March","April","May","June","July","August","September","October","November"};
+        c2 = new JComboBox(month);
+        c2.setBackground(Color.WHITE);
+
+        String year[] = {"1991","1992","1993","1994","1995","1996","1997","1998","1999","2000","2001","2002","2003","2004"};
+        c3 = new JComboBox(year);
+        c3.setBackground(Color.WHITE);
+
+
+        setLayout(null);
+        l1.setBounds(140,20,600,40);
+        add(l1);
+        l2.setBounds(290,70,600,30);
+        add(l2);
+        l3.setBounds(100,140,100,30);
+        add(l3);
+        l4.setBounds(100,190,200,30);
+        add(l4);
+        l5.setBounds(100,240,200,30);
+        add(l5);
+        l13.setBounds(300,240,40,30);
+        add(l13);
+        l14.setBounds(410,240,50,30);
+        add(l14);
+        l7.setBounds(100,340,200,30);
+        add(l7);
+        l6.setBounds(100,290,200,30);
+        add(l6);
+        l8.setBounds(100,390,200,30);
+        add(l8);
+        l9.setBounds(100,440,200,30);
+        add(l9);
+        l10.setBounds(100,490,200,30);
+        add(l10);
+        l11.setBounds(100,540,200,30);
+        add(l11);
+        l12.setBounds(100,590,200,30);
+        add(l12);
+
+
+        t1.setBounds(300,140,400,30);
+        add(t1);
+        t2.setBounds(300,190,400,30);
+        add(t2);
+        t3.setBounds(300,340,400,30);
+        add(t3);
+        t4.setBounds(300,440,400,30);
+        add(t4);
+        t5.setBounds(300,490,400,30);
+        add(t5);
+        t6.setBounds(300,540,400,30);
+        add(t6);
+        t7.setBounds(300,590,400,30);
+        add(t7);
+
+        r1.setBounds(300,290,60,30);
+        add(r1);
+        r2.setBounds(450,290,90,30);
+        add(r2);
+        r3.setBounds(300,390,100,30);
+        add(r3);
+        r4.setBounds(450,390,100,30);
+        add(r4);
+        r5.setBounds(635,390,100,30);
+        add(r5);
+
+        c1.setBounds(340,240,60,30);
+        add(c1);
+        c2.setBounds(460,240,100,30);
+        add(c2);
+        c3.setBounds(610,240,90,30);
+        add(c3);
+
+        b.setBounds(570,600,100,30);
+        add(b);
+        b.addActionListener(this);
+
+        getContentPane().setBackground(Color.WHITE);
+        setSize(850,850);
+        setLocation(500,90);
+        setVisible(true);
+        
+
+
 
 
 
