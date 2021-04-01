@@ -6,6 +6,8 @@ import  javax.swing.*;
 import  java.net.*;
 import  java.sql.*;
 import java.util.*;
+import  java.lang.*;
+
 
 
 public class Signup extends JFrame implements ActionListener {
@@ -202,7 +204,7 @@ public class Signup extends JFrame implements ActionListener {
         c3.setBounds(610,240,90,30);
         add(c3);
 
-        b.setBounds(570,600,100,30);
+        b.setBounds(620,660,80,30);
         add(b);
         b.addActionListener(this);
 
@@ -210,29 +212,63 @@ public class Signup extends JFrame implements ActionListener {
         setSize(850,850);
         setLocation(500,90);
         setVisible(true);
-        
+
+
+    }
+    public void actionPerformed(ActionEvent ae){
+        String a = t1.getText();
+        String b = t2.getText();
+
+        String ac = (String)c1.getSelectedItem();
+        String bc = (String)c2.getSelectedItem();
+        String cc = (String)c3.getSelectedItem();
+
+        String d = null;
+        if(r1.isSelected()){
+            d = "Male";
+        }else if(r2.isSelected()){
+            d = "Female";
+        }
+        String e = t3.getText();
+        String f = null;
+        if(r3.isSelected()){
+            f = "Married";
+        }else if(r4.isSelected()){
+            f = "Unmarried";
+        }else if(r5.isSelected()){
+            f = "Other";
+        }
+
+        String g = t4.getText();
+        String h = t5.getText();
+        String i = t6.getText();
+        String j = t7.getText();
+
+        try{
+            if(t6.getText().equals("")){
+                JOptionPane.showMessageDialog(null,"Fill All the required fields");
+
+            }else{
+                Conn c1 = new Conn();
+                String q1 = "insert into signup values('"+a+"','"+b+"','"+ac+"','"+bc+"','"+cc+"','"+d+"','"+e+"','"+f+"','"+g+"','"+h+"','"+i+"','"+j+"','"+first+"')";
+                c1.s.executeUpdate(q1);
+                new Signup2().setVisible(true);
+                setVisible(false);
+            }
+
+        }catch(Exception ex){
+            ex.printStackTrace();
+
+
+        }
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    }
+    public  static void main(String[] args){
+        new Signup().setVisible(true);
 
     }
 
