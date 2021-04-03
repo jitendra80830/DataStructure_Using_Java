@@ -7,7 +7,7 @@ import java.sql.*;
 import  javax.swing.*;
 
 
-public class Signup2 extends JFrame {
+public class Signup2 extends JFrame implements ActionListener{
     JLabel l1,l2,l3,l4,l5,l6,l7,l8,l9,l10,l11,l12;
     JButton b;
     JRadioButton r1,r2,r3,r4;
@@ -126,14 +126,97 @@ public class Signup2 extends JFrame {
         c5.setFont(new Font("Raleway",Font.BOLD,14));
 
         setLayout(null);
-        
 
 
+        l12.setBounds(700,10,60,30);
+        add(l12);
+
+        t3.setBounds(760,10,60,30);
+        add(t3);
+
+        l1.setBounds(280,30,600,40);
+        add(l1);
+
+        l2.setBounds(100,120,100,30);
+        add(l1);
+
+        c1.setBounds(350,120,320,30);
+        add(c1);
+
+        l3.setBounds(100,170,100,30);
+        add(l3);
+
+        c2.setBounds(350,170,320,30);
+        add(c2);
+
+        l4.setBounds(100,220,100,30);
+        add(l4);
+
+        c3.setBounds(350,220,320,30);
+        add(c3);
+
+        l5.setBounds(100,270,150,30);
+        add(l5);
+
+        c4.setBounds(350,270,320,30);
+        add(c4);
+
+        l11.setBounds(100,290,150,30);
+        add(l11);
+
+        l6.setBounds(100,340,150,30);
+        add(l6);
+
+        c5.setBounds(350,340,320,30);
+        add(c5);
+
+        l7.setBounds(100,390,150,30);
+        add(l7);
+
+        t1.setBounds(350,390,320,30);
+        add(t3);
+
+        l8.setBounds(100,440,180,30);
+        add(l8);
+
+        t2.setBounds(350,440,320,30);
+        add(t2);
+
+        l9.setBounds(100,490,150,30);
+        add(l9);
+
+        r1.setBounds(350,490,100,30);
+        add(r1);
+
+        r2.setBounds(460,490,100,30);
+        add(r2);
+
+        l10.setBounds(100,540,180,30);
+        add(l10);
+
+        r3.setBounds(350,540,100,30);
+        add(r3);
+
+        r4.setBounds(460,540,100,30);
+        add(r4);
+
+        b.setBounds(570,600,100,30);
+        add(b);
+
+        b.addActionListener(this);
+
+        getContentPane().setBackground(Color.WHITE);
+
+        setSize(850,850);
+        setLocation(500,90);
+        setVisible(true);
 
 
+    }
+    public void actionPerformed(ActionEvent ae){
 
-
-
-
+    }
+    public static void main(String[] args){
+        new Signup2().setVisible(true);
     }
 }

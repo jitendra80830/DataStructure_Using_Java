@@ -78,6 +78,9 @@ public class Signup extends JFrame implements ActionListener {
         l13 = new JLabel("Date:");
         l13.setFont(new Font("Raleway",Font.BOLD,14));
 
+        l14 = new JLabel("Month:");
+        l14.setFont(new Font("Raleway",Font.BOLD,14));
+
         l4 = new JLabel("Month:");
         l4.setFont(new Font("Raleway",Font.BOLD,14));
 
@@ -99,6 +102,14 @@ public class Signup extends JFrame implements ActionListener {
 
         t5 = new JTextField();
         t5.setFont(new Font("Raleway",Font.BOLD,14));
+
+        t6 = new JTextField();
+        t6.setFont(new Font("Raleway",Font.BOLD,14));
+
+        t7 = new JTextField();
+        t7.setFont(new Font("Raleway",Font.BOLD,14));
+
+
 
 
         b = new JButton("Next");
@@ -261,9 +272,6 @@ public class Signup extends JFrame implements ActionListener {
 
 
         }
-
-
-
 
 
     }
