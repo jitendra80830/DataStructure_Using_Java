@@ -4,6 +4,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.*;
+import java.sql.*;
 
 public class Signup3 extends JFrame implements ActionListener {
     JLabel l1,l2,l3,l4,l5,l6,l7,l8,l9,l10,l11;
@@ -216,6 +218,56 @@ public class Signup3 extends JFrame implements ActionListener {
         }else if(r4.isSelected()){
             a = "Recurring Deposit Account";
         }
+
+        Random ran = new Random();
+        long first7 = (ran.nextLong() % 90000000L) + 4050936000000000L;
+        long first8 = Math.abs(first7);
+
+        long first3 = (ran.nextLong() % 9000L) + 100L;
+        long first4 = Math.abs(first3);
+
+        String b = "";
+        if(c1.isSelected()){
+            b = b+" ATM Card";
+        }else if(c2.isSelected()){
+            b = b+" Internet Backing";
+        }else if(c3.isSelected()){
+            b = b+" Mobile Backing";
+        }else if(c4.isSelected()){
+            b = b+" Email Alert";
+        }else if(c5.isSelected()){
+            b = b+" cheque Book";
+        }else if(c6.isSelected()){
+            b = b+" E-Statements";
+        }
+        String c = t1.getText();
+
+        try{
+            if(ae.getSource()==b){
+                if(b.equals("")){
+                    JOptionPane.showMessageDialog(null,"Fill all the required fields");
+                }else{
+                    Conn c1 = new Conn();
+                    String q1 = "insert into signup3 values('"+a+"','"+first8+"','"+first4+"','"+b+"','"+c+"')";
+                    String q2 = " insert into login values('"+first8+"','"+first4+"')";
+                    c1.s.executeUpdate(q1);
+                    c1.s.executeUpdate(q2);
+                    JOptionPane.showMessageDialog(null,"Card Number: " + first8 + "\n  pin: "+ first4);
+
+
+                    //new Deposit().setVisible(true);
+                    setVisible(false);
+
+                }
+
+            }else if(ae.getSource()==b2){
+                System.exit(0);
+            }
+        }catch (Exception ex){
+            ex.printStackTrace();
+
+        }
+
 
 
     }
