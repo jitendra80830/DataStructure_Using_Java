@@ -104,7 +104,7 @@ public class Login extends JFrame implements  ActionListener {
 
             if(ae.getSource()==b1){
                 if(rs.next()){
-                    //new Translations().setVisible(true);
+                    new Transcations().setVisible(true);
                     setVisible(false);
 
                 }else{
