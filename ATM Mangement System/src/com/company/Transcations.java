@@ -115,7 +115,22 @@ public class Transcations extends JFrame implements ActionListener{
         if(ae.getSource()==b1){
             new Deposit.setVisible(true);
             setVisible(false);
-        }else if()
+        }else if(ae.getSource()==b2){
+            new Withdrawl().setVisible(true);
+            setVisible(false);
+        }else if(ae.getSource()==b3){
+            new FastCash().setVisible(true);
+            setVisible(false);
+        }else if(ae.getSource()==b4){
+            new Login().setVisible(true);
+            setVisible(false);
+        }else if(ae.getSource()==b5){
+            new Pin().setVisible(true);
+            setVisible(false);
+        }else if(ae.getSource()==b6){
+            
+
+        }
 
 
     }
