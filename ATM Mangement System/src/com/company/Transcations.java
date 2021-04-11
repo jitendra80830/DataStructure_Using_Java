@@ -112,7 +112,7 @@ public class Transcations extends JFrame implements ActionListener{
     }
     public void actionPerformed(ActionEvent ae){
 
-        if(ae.getSource()==b1){
+        /*if(ae.getSource()==b1){
             new Deposit.setVisible(true);
             setVisible(false);
         }else if(ae.getSource()==b2){
@@ -128,10 +128,29 @@ public class Transcations extends JFrame implements ActionListener{
             new Pin().setVisible(true);
             setVisible(false);
         }else if(ae.getSource()==b6){
-            
+            String pinn = JOptionPane.showInputDialog("Enter Pin");
+            Conn c1 = new Conn();
 
-        }
+            try{
+                ResultSet rs = c1.s.executeQuery("SELECT balance FROM bank ORDER By pin = '"+pinn+"' DESC LIMIT 1");
 
+                if(rs.next()){
+                    String balance = rs.getString("balance");
+                    JOptionPane.showMessageDialog(null,"Your Account Balance is: "+balance);
+                }
+            }catch (Exception e){
+                e.printStackTrace();
+            }
+
+
+        }else if(ae.getSource()==b7){
+            System.exit(0);
+        }*/
+
+
+    }
+    public static void main(String[] args){
+        new Transcations().setVisible(true);
 
     }
 }
