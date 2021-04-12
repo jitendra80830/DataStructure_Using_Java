@@ -15,7 +15,7 @@ public class Transcations extends JFrame implements ActionListener{
 
     Transcations(){
 
-        setFont(new Font("System",Font.BOLD,22));
+        setFont(new Font("System",Font.BOLD,55));
         Font f = getFont();
         FontMetrics fm = getFontMetrics(f);
         int x = fm.stringWidth("TRANSACTIONS");
@@ -112,20 +112,20 @@ public class Transcations extends JFrame implements ActionListener{
     }
     public void actionPerformed(ActionEvent ae){
 
-        /*if(ae.getSource()==b1){
-            new Deposit.setVisible(true);
+        if(ae.getSource()==b1){
+            new Deposit().setVisible(true);
             setVisible(false);
         }else if(ae.getSource()==b2){
             new Withdrawl().setVisible(true);
             setVisible(false);
         }else if(ae.getSource()==b3){
-            new FastCash().setVisible(true);
+            //new FastCash().setVisible(true);
             setVisible(false);
         }else if(ae.getSource()==b4){
             new Login().setVisible(true);
             setVisible(false);
         }else if(ae.getSource()==b5){
-            new Pin().setVisible(true);
+            //new Pin().setVisible(true);
             setVisible(false);
         }else if(ae.getSource()==b6){
             String pinn = JOptionPane.showInputDialog("Enter Pin");
@@ -145,7 +145,7 @@ public class Transcations extends JFrame implements ActionListener{
 
         }else if(ae.getSource()==b7){
             System.exit(0);
-        }*/
+        }
 
 
     }

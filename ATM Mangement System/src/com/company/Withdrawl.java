@@ -6,34 +6,37 @@ import javax.swing.*;
 import java.sql.*;
 import java.util.*;
 
-public class Deposit extends JFrame implements ActionListener{
+public class Withdrawl extends JFrame implements ActionListener{
     JTextField t1,t2;
     JButton b1,b2,b3;
-    JLabel l1,l2,l3;
+    JLabel l1,l2,l3,l4;
 
 
-    Deposit(){
+    Withdrawl(){
 
 
-        setFont(new Font("System",Font.BOLD,35));
+        setFont(new Font("System",Font.BOLD,22));
         Font f = getFont();
         FontMetrics fm = getFontMetrics(f);
-        int x = fm.stringWidth("Deposit");
+        int x = fm.stringWidth("WITHDRAWAL");
         int y = fm.stringWidth(" ");
         int z = getWidth() - x;
         int w = z/y;
         String pad = "";
         pad = String.format("%"+w+"s",pad);
-        setTitle(pad+"Deposit");
+        setTitle(pad+"WITHDRAWAL");
 
-        l1 = new JLabel("Enter Amount you want");
-        l1.setFont(new Font("System",Font.BOLD,35));
+        l1 = new JLabel("MAXIMUM DAILY WITHDRAWAL");
+        l1.setFont(new Font("System",Font.BOLD,40));
 
-        l2 = new JLabel("To Deposit");
-        l2.setFont(new Font("System",Font.BOLD,35));
+        l2 = new JLabel("IS Rs 10,000");
+        l2.setFont(new Font("System",Font.BOLD,40));
 
-        l3 = new JLabel("Enter Pin");
-        l3.setFont(new Font("System",Font.BOLD,14));
+        l3 = new JLabel("PLEASE ENTER YOUR AMOUNT");
+        l3.setFont(new Font("System",Font.BOLD,35));
+
+        l4 = new JLabel("Enter pin");
+        l4.setFont(new Font("System",Font.BOLD,14));
 
         t1 = new JTextField();
         t1.setFont(new Font("Raleway",Font.BOLD,22));
@@ -41,7 +44,7 @@ public class Deposit extends JFrame implements ActionListener{
         t2 = new JTextField();
         t2.setFont(new Font("Raleway",Font.BOLD,14));
 
-        b1 = new JButton("DEPOSIT");
+        b1 = new JButton("WITHDRAWAL");
         b1.setFont(new Font("System",Font.BOLD,18));
         b1.setBackground(Color.BLACK);
         b1.setForeground(Color.WHITE);
@@ -58,25 +61,28 @@ public class Deposit extends JFrame implements ActionListener{
 
         setLayout(null);
 
-        l3.setBounds(620,10,80,30);
+        l3.setBounds(120,260,800,60);
         add(l3);
+
+        l4.setBounds(620,10,80,30);
+        add(l4);
 
         t2.setBounds(700,10,40,30);
         add(t2);
 
-        l1.setBounds(150,150,800,60);
+        l1.setBounds(90,100,800,60);
         add(l1);
 
-        l2.setBounds(290,210,800,60);
+        l2.setBounds(270,160,800,60);
         add(l2);
 
-        t1.setBounds(250,300,300,50);
+        t1.setBounds(210,340,360,50);
         add(t1);
 
-        b1.setBounds(260,380,125,50);
+        b1.setBounds(220,400,160,50);
         add(b1);
 
-        b2.setBounds(415,380,125,50);
+        b2.setBounds(390,400,160,50);
         add(b2);
 
         b3.setBounds(300,550,200,50);
@@ -104,7 +110,7 @@ public class Deposit extends JFrame implements ActionListener{
 
             if(ae.getSource()==b1){
                 if(t1.getText().equals("")){
-                    JOptionPane.showMessageDialog(null, "Enter the Amount to you want to Deposit");
+                    JOptionPane.showMessageDialog(null, "Enter the Amount to you want to Withdrawal");
                 }else {
                     Conn c1 = new Conn();
 
@@ -116,14 +122,14 @@ public class Deposit extends JFrame implements ActionListener{
 
                         double d = Double.parseDouble(a);
 
-                        balance+=d;
+                        balance-=d;
 
                         String q1 = "insert into bank values('"+pin+"','"+d+"',null,'"+balance+"')";
 
                         c1.s.executeUpdate(q1);
 
                     }
-                    JOptionPane.showMessageDialog(null,"Rs. "+a+" Deposited successfully");
+                    JOptionPane.showMessageDialog(null,"Rs. "+a+" Debited successfully");
                     new Transcations().setVisible(true);
                     setVisible(false);
 
@@ -144,6 +150,7 @@ public class Deposit extends JFrame implements ActionListener{
 
     }
     public static void main(String[] args){
-        new Deposit().setVisible(true);
+        new Withdrawl().setVisible(true);
     }
 }
+
