@@ -50,7 +50,7 @@ public class Transcations extends JFrame implements ActionListener{
         b4.setBackground(Color.BLACK);
         b4.setForeground(Color.WHITE);
 
-        b5 = new JButton("PIN CANCEL");
+        b5 = new JButton("PIN CHANGE");
         b5.setFont(new Font("System",Font.BOLD,18));
         b5.setBackground(Color.BLACK);
         b5.setForeground(Color.WHITE);
@@ -125,7 +125,7 @@ public class Transcations extends JFrame implements ActionListener{
             new Login().setVisible(true);
             setVisible(false);
         }else if(ae.getSource()==b5){
-            //new Pin().setVisible(true);
+            new Pin().setVisible(true);
             setVisible(false);
         }else if(ae.getSource()==b6){
             String pinn = JOptionPane.showInputDialog("Enter Pin");
