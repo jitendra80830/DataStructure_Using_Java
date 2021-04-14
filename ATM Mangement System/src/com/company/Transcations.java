@@ -119,7 +119,7 @@ public class Transcations extends JFrame implements ActionListener{
             new Withdrawl().setVisible(true);
             setVisible(false);
         }else if(ae.getSource()==b3){
-            //new FastCash().setVisible(true);
+            new FastCash().setVisible(true);
             setVisible(false);
         }else if(ae.getSource()==b4){
             new Login().setVisible(true);
