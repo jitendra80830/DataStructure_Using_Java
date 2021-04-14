@@ -7,7 +7,7 @@ import javax.swing.*;
 import java.sql.*;
 import java.util.*;
 
-public class FastCash extends JFrame{
+public class FastCash extends JFrame implements ActionListener{
 
     JLabel l1,l2;
     JButton b1,b2,b3,b4,b5,b6,b7,b8;
@@ -112,13 +112,23 @@ public class FastCash extends JFrame{
         b8.setBounds(240,610,300,60);
         add(b8);
 
-        //b1.addActionListener(this);
-        //b2.addActionListener(this);
-        //b3.addActionListener(this);
+        b1.addActionListener(this);
+        b2.addActionListener(this);
+        b3.addActionListener(this);
+        b4.addActionListener(this);
+        b5.addActionListener(this);
+        b6.addActionListener(this);
+        b7.addActionListener(this);
+        b8.addActionListener(this);
+
+        getContentPane().setBackground(Color.WHITE);
 
         setSize(800,800);
         setVisible(true);
         setLocation(500,90);
+
+    }
+    public void actionPerformed(ActionEvent ae){
 
     }
     public static void main(String[] args){
